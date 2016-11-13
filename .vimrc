@@ -48,6 +48,8 @@ nnoremap <C-H> <C-W><C-H>
 vnoremap < <gv
 vnoremap > >gv
 
+nnoremap <leader>l :nohlsearch<CR>
+
 nnoremap <C-i> :NERDTreeToggle<CR>
 nnoremap <leader>p "+p
 nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
