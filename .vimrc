@@ -53,6 +53,7 @@ nnoremap <leader>l :nohlsearch<CR>
 nnoremap <C-i> :NERDTreeToggle<CR>
 nnoremap <leader>p "+p
 nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>c  :!pandoc -f markdown --css=$HOME/markdown-css/github.css -t html -o /tmp/mdconvtmp.html %;google-chrome /tmp/mdconvtmp.html<CR>
 
 "Vundle plugin
 filetype off
@@ -71,6 +72,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'hdima/python-syntax'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-commentary'
 call vundle#end()
 filetype plugin indent on
 
