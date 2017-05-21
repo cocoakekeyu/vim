@@ -49,6 +49,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 nnoremap <leader>l :nohlsearch<CR>
+nnoremap <leader>s :Ack 
 
 nnoremap <C-i> :NERDTreeToggle<CR>
 nnoremap <leader>p "+p
@@ -61,6 +62,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'kien/ctrlp.vim'
@@ -73,9 +75,14 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'hdima/python-syntax'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
+
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
 call vundle#end()
 filetype plugin indent on
 
+"use the_silver_searcher(ag) replace ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "let g:pyflakes_use_quickfix = 0
 let g:vim_markdown_folding_disabled=1
