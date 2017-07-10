@@ -37,6 +37,9 @@ endfun
 "  execfile(activate_this, dict(__file__=activate_this))
 "EOF
 
+nnoremap - :call bufferhint#Popup()<CR>
+nnoremap \ :call bufferhint#LoadPrevious()<CR>
+
 let mapleader = ';'
 
 "split navigations
@@ -75,6 +78,8 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'hdima/python-syntax'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
+Plugin 'bsdelf/bufferhint'
+Plugin 'posva/vim-vue'
 
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
