@@ -4,8 +4,6 @@ set nocompatible
 set shiftwidth=4
 set tabstop=4
 set expandtab
-set tabstop=4
-set expandtab
 set nobackup 
 set noswapfile
 set incsearch
@@ -20,29 +18,20 @@ set pastetoggle=<f5>
 
 colorscheme desert 
 
-"python code cant exceed 80 char
+"Python code can't exceed 80 char
 autocmd FileType python call Highlight_80()
 fun Highlight_80()
   highlight OverLength ctermbg=red ctermfg=white guibg=#592929 
   match OverLength /\%81v.\+/
 endfun
 
-"python with virtualenv support
-"py << EOF
-"import os
-"import sys
-"if 'VIRTUAL_ENV' in os.environ:
-"  project_base_dir = os.environ['VIRTUAL_ENV']
-"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-"  execfile(activate_this, dict(__file__=activate_this))
-"EOF
-
+"Excellent buffer manager map
 nnoremap - :call bufferhint#Popup()<CR>
 nnoremap \ :call bufferhint#LoadPrevious()<CR>
 
 let mapleader = ';'
 
-"split navigations
+"Split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -56,7 +45,7 @@ nnoremap <leader>s :Ack
 
 nnoremap <C-i> :NERDTreeToggle<CR>
 nnoremap <leader>p "+p
-nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>c  :!pandoc -f markdown --css=$HOME/markdown-css/github.css -t html -o /tmp/mdconvtmp.html %;google-chrome /tmp/mdconvtmp.html<CR>
 
 "Vundle plugin
@@ -86,7 +75,7 @@ Plugin 'tpope/vim-rails'
 call vundle#end()
 filetype plugin indent on
 
-"use the_silver_searcher(ag) replace ack
+"Use the_silver_searcher(ag) replace ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "let g:pyflakes_use_quickfix = 0
@@ -94,7 +83,7 @@ let g:vim_markdown_folding_disabled=1
 let g:ycm_python_binary_path = 'python'
 let python_highlight_all = 1
 
-"syntastic setting
+"Syntastic setting
 let g:syntastic_error_symbol='>>'       " 错误行使用'>>' 标记
 let g:syntastic_warning_symbol='>'      " 警告行使用'>' 标记
 let g:syntastic_check_on_open=1     " 打开文件时即开启语法检查
